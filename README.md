@@ -1,5 +1,8 @@
 # Nombre del Proyecto
 
+# Integrantes
+Luis Mendez
+
 ## Descripción
 Descripción del proyecto y su propósito.
 
