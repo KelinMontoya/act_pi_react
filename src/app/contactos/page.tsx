@@ -5,7 +5,9 @@ import { useState } from "react";
 export default function ContactosPage() {
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -17,8 +19,11 @@ export default function ContactosPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">📞 Contáctanos</h1>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6 text-black">
+      {/* Título */}
+      <h1 className="text-3xl font-bold mb-6 text-center text-black">
+        📞 Contáctanos
+      </h1>
 
       {/* Redes sociales */}
       <div className="flex gap-6 mb-8">
@@ -48,38 +53,40 @@ export default function ContactosPage() {
       {/* Formulario */}
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-2xl shadow-md w-full max-w-md"
+        className="bg-white p-6 rounded-2xl shadow-md w-full max-w-md text-black"
       >
         <div className="mb-4">
-          <label className="block font-medium mb-1">Nombre</label>
+          <label className="block font-medium mb-1 text-black">Nombre</label>
           <input
             type="text"
             name="nombre"
             value={form.nombre}
             onChange={handleChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg text-black"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block font-medium mb-1">Correo electrónico</label>
+          <label className="block font-medium mb-1 text-black">
+            Correo electrónico
+          </label>
           <input
             type="email"
             name="email"
             value={form.email}
             onChange={handleChange}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg text-black"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block font-medium mb-1">Mensaje</label>
+          <label className="block font-medium mb-1 text-black">Mensaje</label>
           <textarea
             name="mensaje"
             value={form.mensaje}
             onChange={handleChange}
             rows={4}
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg text-black"
             required
           />
         </div>
