@@ -3,6 +3,7 @@
 # Integrantes
 Luis Mendez
 Yessica Gomez
+Kelin Montoya
 ## Descripción
 Descripción del proyecto y su propósito.
 
