@@ -34,14 +34,14 @@ export default function RootLayout({
             <Link href="/" className="hover:underline">
               Inicio
             </Link>
-            <Link href="/about" className="hover:underline">
-              About
-            </Link>
             <Link href="/products" className="hover:underline">
               Productos
             </Link>
             <Link href="/contactos" className="hover:underline">
               Contacto
+            </Link>
+              <Link href="/about" className="hover:underline">
+              About
             </Link>
           </nav>
         </header>
