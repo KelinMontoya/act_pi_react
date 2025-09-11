@@ -34,10 +34,10 @@ export default function RootLayout({
             <Link href="/" className="hover:underline">
               Inicio
             </Link>
-            <Link href="/products" className="hover:underline">
-              Productos
+            <Link href="/catalogo" className="hover:underline">
+              Catálogo
             </Link>
-            <Link href="/contactos" className="hover:underline">
+            <Link href="/contacto" className="hover:underline">
               Contacto
             </Link>
               <Link href="/about" className="hover:underline">

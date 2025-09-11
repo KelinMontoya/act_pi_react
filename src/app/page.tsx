@@ -1,102 +1,105 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="font-sans flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Hero Section */}
+      <header className="flex-1 flex flex-col items-center justify-center text-center px-6 py-20 bg-gradient-to-r from-green-500 to-blue-600 text-white">
+        <h1 className="text-4xl sm:text-6xl font-bold mb-6">
+          Bienvenido a <span className="text-yellow-300">BikeStore</span>
+        </h1>
+        <p className="text-lg sm:text-xl max-w-xl mb-8">
+          Tu tienda online de bicicletas y accesorios. Encuentra tu compañera de
+          ruta ideal.
+        </p>
+        <div className="flex gap-4">
+          <Link
+            href="/catalogo"
+            className="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+          >
+            Ver Catálogo
+          </Link>
+          <Link
+            href="/contacto"
+            className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition"
+          >
+            Contáctanos
+          </Link>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Productos destacados */}
+      <main className="px-8 py-16 flex flex-col gap-12">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 dark:text-white">
+          🚴‍♂️ Productos Destacados
+        </h2>
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {[
+            { id: 1, name: "Bicicleta Montaña", img: "/bike1.jpg" },
+            { id: 2, name: "Bicicleta Urbana", img: "/bike2.jpg" },
+            { id: 3, name: "Bicicleta de Ruta", img: "/bike3.jpg" },
+            { id: 4, name: "Accesorios", img: "/bike4.jpg" },
+          ].map((item) => (
+            <div
+              key={item.id}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
+            >
+              <Image
+                src={item.img}
+                alt={item.name}
+                width={400}
+                height={250}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4 text-center">
+                <h3 className="font-semibold text-lg dark:text-white">
+                  {item.name}
+                </h3>
+                <Link
+                  href="/catalogo"
+                  className="text-green-600 font-medium hover:underline"
+                >
+                  Ver más
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+      {/* Banner promocional */}
+      <section className="bg-yellow-300 py-12 text-center">
+        <h2 className="text-2xl font-bold mb-4 text-gray-900">
+          🚨 Oferta Especial 🚨
+        </h2>
+        <p className="mb-6 text-lg text-gray-800">
+          Envío gratis en compras superiores a $500.000 COP
+        </p>
+        <Link
+          href="/catalogo"
+          className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          Comprar Ahora
+        </Link>
+      </section>
+
+      {/* Footer */}
+      <footer className="mt-auto py-8 flex flex-col sm:flex-row items-center justify-between px-8 bg-gray-200 dark:bg-gray-800">
+        <p className="text-sm text-gray-700 dark:text-gray-300">
+          © {new Date().getFullYear()} BikeStore. Todos los derechos reservados.
+        </p>
+        <div className="flex gap-4 mt-4 sm:mt-0">
+          <Link href="/about" className="hover:underline text-gray-700 dark:text-gray-300">
+            Sobre Nosotros
+          </Link>
+          <Link href="/catalogo" className="hover:underline text-gray-700 dark:text-gray-300">
+            Catálogo
+          </Link>
+          <Link href="/contacto" className="hover:underline text-gray-700 dark:text-gray-300">
+            Contacto
+          </Link>
+        </div>
       </footer>
     </div>
   );
