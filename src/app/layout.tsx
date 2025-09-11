@@ -41,7 +41,7 @@ export default function RootLayout({
               Contacto
             </Link>
               <Link href="/about" className="hover:underline">
-              About
+              Acerca de 
             </Link>
           </nav>
         </header>
