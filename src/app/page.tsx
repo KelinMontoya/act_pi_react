@@ -21,7 +21,7 @@ export default function Home() {
             Ver Catálogo
           </Link>
           <Link
-            href="/contacto"
+            href="/catalogo"
             className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition"
           >
             Contáctanos
